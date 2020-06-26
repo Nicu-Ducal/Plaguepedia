@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../public/styles/settings.css" />
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/svg" href="/public/images/Logo.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+        integrity="sha256-BtbhCIbtfeVWGsqxk1vOHEYXS6qcvQvLMZqjtpWUEx8=" crossorigin="anonymous" />
+    <!--<script src="../public/scripts/settings.js"></script>-->
+    <base href="#top" target="_parent">
+    <title>Plaguepedia</title>
+</head>
+
+<body id="top">
+    <header>
+        <nav id="navbar">
+            <div id="icon">
+                <img src="/public/images/search.svg" alt="Icon" width="75" height="75">
+            </div>
+            <div id="sitename">
+                <h1>Plaguepedia</h1>
+                <h4>The encyclopedia about world's epidemics and pandemics</h4>
+            </div>
+            <div id="toggle">
+                <i class="fas fa-bars menu"></i>
+            </div>
+            <ul>
+                <li class="menuOptions"><a href="/">Home</a></li>
+                <li class="menuOptions"><a href="/#news">News</a></li>
+                <li class="menuOptions"><a href="/public/covid.html">COVID-19</a></li>
+                <li class="menuOptions dropdown">
+                    <a href="/#info" class="dropbtn">Information</a>
+                    <div class="dropdown-content">
+                        <a href="/#totalcases">Total cases</a>
+                        <a href="/#previous">Other plagues</a>
+                        <a href="/#learnmore">Learn more</a>
+                    </div>
+                </li>
+                <li class="menuOptions"><a href="/public/contact.html">Contacts</a></li>
+                <li class="menuLogout"><button id="logoutbut" type="button" class="button"><span>Logout</span></button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <aside class="menu-sidebar">
+        <div class="closeSide"><i class="fas fa-times"></i></div>
+        <ul>
+            <li class="asideOptions"><a href="/">Home</a></li>
+            <li class="asideOptions"><a href="/#news">News</a></li>
+            <li class="asideOptions"><a href="/public/covid.html">COVID-19</a></li>
+            <li class="asideOptions"><a href="/#info">Information</a></li>
+            <li class="asideOptions"><a href="/public/contact.html">Contacts</a></li>
+            <li class="asideLogout"><button id="logoutbut2" type="button" class="button"><span>Logout</span></button>
+            </li>
+        </ul>
+    </aside>
+
+    <div id="dashoptions">
+        <ul>
+            <li><a href="/dashboard">My profile</a></li>
+            <li><a href="/dashboard/friends">Friends</a></li>
+            <li><a href="/dashboard/online">Online now</a></li>
+            <li><a href="/dashboard/quiz">Quiz</a></li>
+            <li><a href="/dashboard/settings">Settings</a></li>
+        </ul>
+    </div>
+    <section>
+        <h1>Settings</h1>
+        <div id="settings">
+            <div id="dash1" class="dashdiv">
+                <ul>
+                    <li id="name">Change First name and Last name</a></li>
+                    <li id="email">Change Email</a></li>
+                    <li id="password">Change Password</a></li>
+                    <li id="birthday">Change Birthday</a></li>
+                </ul>
+            </div>
+            <div id="dash2" class="dashdiv">
+                <%- include("./partials/messages.ejs") %>
+                <div id="content">
+                    <h2>Here you can change your First name, Last name, Email, Password or/and Birthday</h2>
+                    <img src="/public/images/settings.svg" alt="Settings photo">
+                </div>
+            </div>
+    </section>
+    <script>
+        /* Main */
+        window.onload = function () {
+            /* Return button */
+            var logout = document.getElementsByClassName('button');
+            logout[0].onclick = function () {
+                window.location.href = '/users/logout';
+            }
+            logout[1].onclick = function () {
+                window.location.href = '/users/logout';
+            }
+
+            /* Side bar */
+            function toggleSideBar() {
+                let getSidebar = document.querySelector(".menu-sidebar");
+                let getSidebarUl = document.querySelector(".menu-sidebar ul");
+                let getSidebarLinks = document.querySelectorAll(".menu-sidebar ul li");
+                let getSidebarClose = document.querySelector(".closeSide");
+                let toBlurHeader = document.getElementsByTagName("header");
+                let toBlurSections = document.querySelectorAll("aside ~ *");
+
+                toBlurHeader[0].style.filter = "brightness(0.3)";
+                for (let i = 0; i < toBlurSections.length; i++) {
+                    toBlurSections[i].style.filter = "brightness(0.3)";
+                }
+
+                getSidebarUl.style.visibility = "visible";
+                getSidebar.style.width = "300px";
+                /*getSidebar.style.boxShadow = "5px 10px 8px 10px #888888";*/
+
+                getSidebarClose.style.opacity = "1";
+                for (let i = 0; i < getSidebarLinks.length; i++) {
+                    getSidebarLinks[i].style.opacity = "1";
+                }
+
+                toggleAsideStatus = true;
+            }
+
+            function closeSideBar() {
+                let getSidebar = document.querySelector(".menu-sidebar");
+                let getSidebarUl = document.querySelector(".menu-sidebar ul");
+                let getSidebarLinks = document.querySelectorAll(".menu-sidebar ul li");
+                let getSidebarClose = document.querySelector(".closeSide");
+                let toBlurHeader = document.getElementsByTagName("header");
+                let toBlurSections = document.querySelectorAll("aside ~ *");
+
+                getSidebarClose.style.opacity = "0";
+                for (let i = 0; i < getSidebarLinks.length; i++) {
+                    getSidebarLinks[i].style.opacity = "0";
+                }
+
+                /*getSidebar.style.boxShadow = "initial";*/
+                getSidebar.style.width = "0px";
+                getSidebarUl.style.visibility = "hidden";
+
+                toBlurHeader[0].style.filter = "initial";
+                for (let i = 0; i < toBlurSections.length; i++) {
+                    toBlurSections[i].style.filter = "initial";
+                }
+
+                toggleAsideStatus = false;
+            }
+
+            var toggleAsideStatus = false;
+            var toggleButton = document.querySelector("#toggle i");
+            var closeSideBarButton = document.querySelector(".closeSide i");
+            var closeSideBarLinks = document.querySelectorAll(".menu-sidebar ul li");
+            var closeByTouching = document.querySelectorAll("aside ~ *");
+
+
+            toggleButton.onclick = toggleSideBar;
+            closeSideBarButton.onclick = closeSideBar;
+            for (let i = 0; i < closeSideBarLinks.length; i++) {
+                closeSideBarLinks[i].addEventListener('click', closeSideBar);
+            }
+            for (let i = 0; i < closeByTouching.length; i++) {
+                closeByTouching[i].addEventListener('click', closeSideBar);
+            }
+
+
+            // Alerts closing
+            let alerts = document.querySelectorAll('.alert-close');
+
+            function closeAlert() {
+                let removeAlert = this.parentNode;
+                removeAlert.style.opacity = '0';
+                setTimeout(function () { removeAlert.parentNode.removeChild(removeAlert); }, 300);
+            }
+
+            for (let i = 0; i < alerts.length; i++) {
+                alerts[i].addEventListener('click', closeAlert);
+            }
+
+
+            // Task 3 - Captcha
+            var captchaCode = "";
+            function captcha() {
+                captchaCode = "";
+                const alfabetAndNumbers = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+                var chars = [];
+                for (let i = 0; i < 6; i++) {
+                    chars.push(alfabetAndNumbers[Math.floor(Math.random() * alfabetAndNumbers.length)]);
+                }
+
+                var canvas = document.getElementById('canvas');
+                var context = canvas.getContext('2d');
+                fonts = ["50px Arial", "50px Monospace", "50px Roboto", "50px Times New Roman", "50px Times", "50px Courier New"]
+                colors = ["red", "green", "blue", "black", "orange", "purple"]
+                weight = ["normal normal normal ", "italic normal normal ", "normal normal bold ", "italic normal bold "];
+                angles = [0, -0.05, -0.1, -0.2, 0.05, 0.1, 0.2]
+
+
+                context.clearRect(0, 0, canvas.width, canvas.height);
+                for (let i = 0; i < 6; i++) {
+                    context.font = weight[Math.floor(Math.random() * weight.length)] + fonts[i];
+                    context.fillStyle = colors[Math.floor(Math.random() * colors.length)];
+                    let x = i * 40 + Math.floor(Math.random() * 25);
+                    let y = Math.floor(Math.random() * (canvas.height / 3)) + canvas.height / 3;
+                    context.translate(x, y);
+                    context.rotate(Math.PI * angles[Math.floor(Math.random() * angles.length)]);
+                    context.fillText(chars[i], 0, 0);
+                    captchaCode += chars[i];
+                    context.setTransform(1, 0, 0, 1, 0, 0);
+                }
+
+                //Drawing lines
+                context.lineWidth = 3;
+                context.moveTo(30, 30);
+                context.lineTo(90, 90);
+                context.moveTo(160, 20);
+                context.lineTo(0, 130);
+                context.moveTo(130, 130);
+                context.lineTo(190, 190);
+                context.moveTo(260, 120);
+                context.lineTo(100, 230);
+                context.stroke();
+            }
+
+            function checkCaptcha() {
+                var input = document.getElementById('input-captcha').value;
+                if (captchaCode == input) {
+                    return 1;
+                } else {
+                    alert("Wrong Captcha. Try again");
+                    return 0;
+                }
+            }
+
+
+            // Ajax
+            var name = document.getElementById('name');
+            var email = document.getElementById('email');
+            var password = document.getElementById('password');
+            var birthday = document.getElementById('birthday');
+
+            var data;
+            async function getContent() {
+                const response = await fetch('/public/ajax/settings.json');
+                data = await response.json();
+            }
+            getContent();
+
+            // First name, last name
+            function changeName() {
+                var toChange = data["name"].replace("replace-firstname", "<%= user.firstname %>").replace("replace-lastname", "<%= user.lastname %>");
+                var Username = "<%= user.username %>";
+
+                document.getElementById('content').innerHTML = toChange;
+                var first = document.getElementById('first');
+                var last = document.getElementById('last');
+                captcha();
+                // On reload
+                document.getElementById('refresh').onclick = captcha;
+                document.getElementById('submit-captcha').addEventListener('click', function () {
+                    let firstVal = first.value;
+                    let lastVal = last.value;
+
+                    if (firstVal == 'Enter the new First name' && lastVal == 'Enter the new Last name') {
+                        alert('No changes have been made');
+                        captcha();
+                    } else {
+                        if (checkCaptcha()) {
+                            if (firstVal != 'Enter the new First name' || lastVal != 'Enter the new Last name') {
+                                if (firstVal == 'Enter the new First name')
+                                    firstVal = "<%= user.firstname %>";
+                                if (lastVal == 'Enter the new Last name')
+                                    lastVal = "<%= user.lastname %>";
+                                fetch('/dashboard/settings/change', {
+                                    method: "POST",
+                                    redirect: "follow",
+                                    headers: {
+                                        'Content-Type': 'application/json'
+                                    },
+                                    body: JSON.stringify({
+                                        "username": Username,
+                                        "change": {
+                                            firstname: firstVal,
+                                            lastname: lastVal
+                                        }
+                                    })
+                                })
+                                    .then(res => {
+                                        window.location.reload();
+                                    })
+                                    .catch(err => console.log(err));
+                            }
+                        } else {
+                            captcha();
+                        }
+                    }
+                });
+            }
+            name.onclick = changeName;
+
+            // Change email
+            function changeEmail() {
+                var toChange = data["email"].replace("replace-email", "<%= user.email %>");
+                var Username = "<%= user.username %>";
+
+                document.getElementById('content').innerHTML = toChange;
+                var eml = document.getElementById('email-input');
+                captcha();
+                // On reload
+                document.getElementById('refresh').onclick = captcha;
+                document.getElementById('submit-captcha').addEventListener('click', function () {
+                    let newMail = eml.value;
+
+                    if (eml == 'Enter the new Email') {
+                        alert('No changes have been made');
+                        captcha();
+                    } else {
+                        if (checkCaptcha()) {
+                            if (newMail != 'Enter the new Email') {
+                                fetch('/dashboard/settings/change', {
+                                    method: "POST",
+                                    redirect: "follow",
+                                    headers: {
+                                        'Content-Type': 'application/json'
+                                    },
+                                    body: JSON.stringify({
+                                        "username": Username,
+                                        "change": {
+                                            email: newMail
+                                        }
+                                    })
+                                })
+                                    .then(res => {
+                                        window.location.reload();
+                                    })
+                                    .catch(err => console.log(err));
+                            }
+                        } else {
+                            captcha();
+                        }
+                    }
+                });
+            }
+            email.onclick = changeEmail;
+
+            // Change email
+            function changeBirthday() {
+                var date = new Date("<%= user.birthday %>");
+                var formatedDate = date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear();
+                var toChange = data["birthday"].replace("replace-birthday", formatedDate);
+                var Username = "<%= user.username %>";
+
+                document.getElementById('content').innerHTML = toChange;
+                var bday = document.getElementById('bday');
+                captcha();
+                // On reload
+                document.getElementById('refresh').onclick = captcha;
+                document.getElementById('submit-captcha').addEventListener('click', function () {
+                    let newBday = bday.value;
+                    console.log(newBday);
+                    if (newBday == '') {
+                        alert('No changes have been made');
+                        captcha();
+                    } else {
+                        if (checkCaptcha()) {
+                            if (newBday != '') {
+                                fetch('/dashboard/settings/change', {
+                                    method: "POST",
+                                    redirect: "follow",
+                                    headers: {
+                                        'Content-Type': 'application/json'
+                                    },
+                                    body: JSON.stringify({
+                                        "username": Username,
+                                        "change": {
+                                            birthday: new Date(newBday)
+                                        }
+                                    })
+                                })
+                                    .then(res => {
+                                        window.location.reload();
+                                    })
+                                    .catch(err => console.log(err));
+                            }
+                        } else {
+                            captcha();
+                        }
+                    }
+                });
+            }
+            birthday.onclick = changeBirthday;
+        }
+
+    </script>
+</body>
+
+</html>

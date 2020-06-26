@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="styles/homepage.css" />
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/svg" href="images/Logo.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+        integrity="sha256-BtbhCIbtfeVWGsqxk1vOHEYXS6qcvQvLMZqjtpWUEx8=" crossorigin="anonymous" />
+    <script src="scripts/homepage.js"></script>
+    <script src="http://www.youtube.com/player_api"></script>
+    <!--<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> TESTING-->
+    <base href="#top" target="_parent" />
+    <title>Plaguepedia</title>
+</head>
+
+<body id="top">
+    <header>
+        <nav id="navbar">
+            <div id="icon">
+                <img src="images/search.svg" alt="Icon" width="75" height="75" />
+            </div>
+            <div id="sitename">
+                <h1>Plaguepedia</h1>
+                <h4>The encyclopedia about world's epidemics and pandemics</h4>
+            </div>
+            <div id="toggle">
+                <i class="fas fa-bars menu"></i>
+            </div>
+            <ul>
+                <li class="menuOptions"><a href="/#top">Home</a></li>
+                <li class="menuOptions"><a href="#news">News</a></li>
+                <li class="menuOptions"><a href="covid.html">COVID-19</a></li>
+                <li class="dropdown menuOptions">
+                    <a href="#info" class="dropbtn">Information</a>
+                    <div class="dropdown-content">
+                        <a href="#totalcases">Total cases</a>
+                        <a href="#previous">Other plagues</a>
+                        <a href="#learnmore">Learn more</a>
+                    </div>
+                </li>
+                <li class="menuOptions"><a href="/contact">Contacts</a></li>
+                <li class="menuLogin">
+                    <button id="logbutton" type="button" class="button">
+                        <span>Login</span>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <aside class="menu-sidebar">
+        <div class="closeSide"><i class="fas fa-times"></i></div>
+        <ul>
+            <li class="asideOptions"><a href="/">Home</a></li>
+            <li class="asideOptions"><a href="#news">News</a></li>
+            <li class="asideOptions"><a href="covid.html">COVID-19</a></li>
+            <li class="asideOptions"><a href="#info">Information</a></li>
+            <li class="asideOptions"><a href="/contact">Contacts</a></li>
+            <li class="asideLogin">
+                <button id="logbutton2" type="button" class="button"><span>Login</span></button>
+            </li>
+        </ul>
+    </aside>
+    <section id="about" class="active-section">
+        <div id="aboutdiv1" class="aboutdiv">
+            <img id="aboutimg" src="images/about.svg" alt="About image" width="600" height="400" />
+        </div>
+        <div id="aboutdiv2" class="aboutdiv">
+            <h2>Welcome to Plaguepedia</h2>
+            <br /><br />
+            <p>
+                This is a free open-source encyclopedia that has the most
+                recent news about Earth's epidemics and pandemics, where you
+                can find live informations and statistics about them.<br />
+                Besides that, we share a lot of verified information about
+                other plagues that endangered the life on earth in the
+                past.<br />
+                Feel free to use the website and share it to your friends so
+                more people could know about us.
+            </p>
+        </div>
+    </section>
+
+    <section id="news">
+        <div>
+            <h2>Latest News about World's Pandemics</h2>
+        </div>
+        <article>
+            <div class="newsdiv">
+                <h3>
+                    World Health Organization Declares COVID-19 a
+                    'Pandemic.' Here's What That Means
+                </h3>
+                <br /><br />
+                <p>
+                    The World Health Organization (WHO) on March 11 declared
+                    COVID-19 a pandemic, pointing to the over 118,000 cases
+                    of the coronavirus illness in over 110 countries and
+                    territories around the world and the sustained risk of
+                    further global spread. <br /><br />“This is not just a
+                    public health crisis, it is a crisis that will touch
+                    every sector,” said Dr. Tedros Adhanom Ghebreyesus, WHO
+                    director-general, at a media briefing. “So every sector
+                    and every individual must be involved in the fights.”<br /><br />An
+                    epidemic refers to an uptick in the spread of a disease
+                    within a specific community. By contrast, the WHO
+                    defines a pandemic as global spread of a new disease,
+                    though the specific threshold for meeting that criteria
+                    is fuzzy. The term is most often applied to new
+                    influenza strains, and the CDC says it’s used when
+                    viruses “are able to infect people easily and spread
+                    from person to person in an efficient and sustained way”
+                    in multiple regions. The declaration refers to the
+                    spread of a disease, rather than the severity of the
+                    illness it causes.<br /><br />
+                    For more information about this, continue reading
+                    <a href="https://time.com/5791661/who-coronavirus-pandemic-declaration/">here</a>. You can watch the
+                    video next to this article for more
+                    details.
+                </p>
+            </div>
+            <div class="video newsdiv">
+                <iframe id="video1" src="https://www.youtube.com/embed/xKPWngYf2Wk?enablejsapi=1"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+        </article>
+        <article>
+            <div class="newsdiv">
+                <h3>
+                    Coronavirus cases top 300,000 as countries warn citizens
+                    to stay home
+                </h3>
+                <p>
+                    <br /><strong>What you need to know</strong><br /><br />
+                </p>
+                <ul>
+                    <li>
+                        <b>The global outlook:</b> More than 300,000 people
+                        have contracted the novel coronavirus and at least
+                        12,944 have died, according to a tally by
+                        <a href="https://coronavirus.jhu.edu/map.html">Johns Hopkins University</a>.
+                    </li>
+                    <li>
+                        <b>Threat of severe economic downturn:</b> A global
+                        recession is looming as businesses down tools and
+                        send workers home to stop the spread of the virus.
+                    </li>
+                    <li>
+                        <b>US death toll rises:</b> More than 323 people
+                        have died from the virus in the United States.
+                    </li>
+                    <li>
+                        Want to know more about coronavirus? Press
+                        <a href="https://edition.cnn.com/specials/world/coronavirus-outbreak-intl-hnk">here</a>.
+                    </li>
+                </ul>
+            </div>
+            <div class="video newsdiv">
+                <iframe id="video2" src="https://www.youtube.com/embed/iVo5j9mZq7g?enablejsapi=1"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+        </article>
+    </section>
+
+    <section id="covid">
+        <div>
+            <h2>The new Coronavirus outbreak</h2>
+        </div>
+        <article>
+            <h3>What is the new COVID-19?</h3>
+            <div class="covidtext">
+                <hr />
+                <p>
+                    <b>Coronavirus disease 2019 (COVID-19)</b> is an
+                    infectious disease caused by severe acute respiratory
+                    syndrome coronavirus 2 (SARS-CoV-2). The disease was
+                    first identified in 2019 in Wuhan, Central China, and
+                    has since spread globally, resulting in the 2019–20
+                    coronavirus pandemic. Most people infected with the
+                    COVID-19 virus will experience mild to moderate
+                    respiratory illness and recover without requiring
+                    special treatment. Older people, and those with
+                    underlying medical problems like cardiovascular disease,
+                    diabetes, chronic respiratory disease, and cancer are
+                    more likely to develop serious illness.<br /><br />The
+                    virus is typically spread from one person to another via
+                    respiratory droplets produced during coughing. It may
+                    also be spread from touching contaminated surfaces and
+                    then touching one's face. Fecal–oral transmission is
+                    also being studied as the virus has been found in
+                    patients stool. Time from exposure to onset of symptoms
+                    is generally between two and 14 days, with an average of
+                    five days. The standard method of diagnosis is by
+                    reverse transcription polymerase chain reaction
+                    (rRT-PCR) from a nasopharyngeal swab. The infection can
+                    also be diagnosed from a combination of symptoms, risk
+                    factors and a chest CT scan showing features of
+                    pneumonia.
+                </p>
+            </div>
+            <figure>
+                <img src="https://beta.ctvnews.ca/content/dam/ctvnews/images/2020/3/3/1_4837302.jpg?cache_timestamp=1583273179500"
+                    alt="Coronavirus Image" />
+                <figcaption>
+                    An example of how coronaviruses lool like
+                </figcaption>
+            </figure>
+            <div class="covidtext">
+                <h3> Read more about COVID-19 <a href="covid.html">here</a>.</h3>
+            </div>
+        </article>
+    </section>
+
+    <section id="info">
+        <div>
+            <h2>Other useful information</h2>
+        </div>
+        <div class="cases">
+            <div class="infocases" id="totalcases">
+                <h3>Total number of cases at the moment</h3>
+                <p>
+                    In this section, you can watch the situation in every
+                    country at this moment (number of total cases, number of
+                    active cases, number of recoveries, number of deaths in
+                    every country and the whole world).<br /><br />
+                    The most affected countries as of 05 May 2020, 18:00
+                    are:
+                </p>
+                <ol>
+                    <li>USA(1,215,457 total cases)</li>
+                    <li>Spain(250,561 total cases)</li>
+                    <li>Italy(211,938 total cases)</li>
+                    <li>UK(190,584 total cases)</li>
+                    <li>France(169,462 total cases)</li>
+                    <li>Germany(166,304 total cases)</li>
+                    <li>Russia(155,370 total cases)</li>
+                    <li>Turkey(127,659 total cases)</li>
+                    <li>Brazil(108,620 total cases)</li>
+                    <li>Iran(99,970 total cases)</li>
+                </ol>
+            </div>
+            <div class="video infocases">
+                <iframe id="video3" src="https://www.youtube.com/embed/rJhMVBQ-K8Y?enablejsapi=1"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+        <h3 id="previous">Previous epidemics and pandemics</h3>
+        <div class="gallery">
+            <figure class="gallery_item gallery_item--1">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/H1N1_navbox.jpg/1280px-H1N1_navbox.jpg"
+                    class="gallery__img" alt="Image 1" />
+                <figcaption>
+                    <strong><em>The Spanish flu</em></strong>, also known as the 1918 flu pandemic, was an unusually
+                    deadly influenza pandemic. Lasting from January 1918 to
+                    December 1920, it infected 500 million people—about a
+                    quarter of the world's population at the time. The death
+                    toll is estimated to have been anywhere from 17 million
+                    to 50 million, and possibly as high as 100 million,
+                    making it one of the deadliest epidemics in human
+                    history.
+                </figcaption>
+            </figure>
+            <figure class="gallery_item gallery_item--2">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/SARS_virion.gif" class="gallery__img"
+                    alt="Image 2" />
+                <figcaption>
+                    <strong><em>Severe acute respiratory syndrome-related coronavirus (SARS-CoV)</em></strong>
+                    is a species of coronavirus that infects humans, bats
+                    and certain other mammals. Two strains of the virus have
+                    caused outbreaks of severe respiratory diseases in
+                    humans: SARS-CoV, which caused an outbreak of severe
+                    acute respiratory syndrome (SARS) between 2002 and 2003,
+                    and SARS-CoV-2, which since late 2019 has caused a
+                    pandemic of coronavirus disease 2019 (COVID-19).
+                </figcaption>
+            </figure>
+            <figure class="gallery_item gallery_item--3">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/MERS-CoV_electron_micrograph1.jpg"
+                    class="gallery__img" alt="Image 3" />
+                <figcaption>
+                    <strong><em>Middle East respiratory syndrome-related coronavirus (MERS-CoV)</em></strong>, or
+                    EMC/2012 (HCoV-EMC/2012), is a species of
+                    coronavirus which infects humans, bats, and camels.
+                    Initially called 2012 novel coronavirus (2012-nCoV) or
+                    simply novel coronavirus (nCoV), it was first reported
+                    in 2012 after genome sequencing of a virus isolated from
+                    sputum samples from a person who fell ill in a 2012
+                    outbreak of a new flu.
+                </figcaption>
+            </figure>
+            <figure class="gallery_item gallery_item--4">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/H1N1_influenza_virus.jpg/450px-H1N1_influenza_virus.jpg"
+                    class="gallery__img" alt="Image 4" />
+                <figcaption>
+                    <strong><em>Swine influenza</em></strong> is an
+                    infection caused by any one of several types of swine
+                    influenza viruses. Swine influenza virus (SIV) or
+                    swine-origin influenza virus (S-OIV) is any strain of
+                    the influenza family of viruses that is endemic in pigs.
+                    The swine flu was initially seen in the US in April
+                    2009, where the strain of the particular virus was a
+                    mixture from 3 types of strains.
+                </figcaption>
+            </figure>
+        </div>
+        <div class="cases" id="learnmore">
+            <div class="infocases">
+                <h3>Learn more about the new spreading plague</h3>
+                <p>
+                    We suggest you to watch this video about the new
+                    COVID-19, where you can visualize how does the new
+                    coronavirus spread, how does it affect our body and how
+                    do we recover from it. We suggest sharing it to your
+                    friends, relatives, so they can learn about this as
+                    well.
+                </p>
+            </div>
+            <div class="video infocases">
+                <iframe id="video4" width="1519" height="586"
+                    src="https://www.youtube.com/embed/BtN-goy9VOY?enablejsapi=1"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+    <footer id="contacts">
+        <h2>Contacts</h2>
+        <div>
+            <p>
+                Plaguepedia is still under development. Hope you enjoy
+                spending time on the website. Improvements are yet to come.
+                Stay tuned for the updates.<br />
+                Don't forget to wash your hands. Be healthy, protect
+                yourself and your loved ones. #StayHome. Together we can
+                win.
+            </p>
+            <br />
+            <hr />
+            <p>
+                Created by: Ducal Nicolae, student at University of
+                Bucharest<br />Email: nicolae.ducal@my.fmi.unibuc.ro<br />nicu.ducal01@gmail.com
+            </p>
+        </div>
+        <div class="centerdiv">
+            <a href="https://www.facebook.com/nicu.ducal" target="_blank">
+                <i class="fab fa-facebook-square"></i> </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="https://www.instagram.com/nicu_ducal/" target="_blank">
+                <i class="fab fa-instagram"></i> </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="https://www.linkedin.com/in/nicolae-ducal-3547591a3/" target="_blank">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </div>
+    </footer>
+
+    <!-- TESTING
+		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+		<script>
+ 			AOS.init();
+		</script> -->
+</body>
+
+</html>

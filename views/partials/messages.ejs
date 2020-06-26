@@ -1,0 +1,42 @@
+<% if (typeof errors != 'undefined') { %>
+<% errors.forEach(function(error) { %>
+<div class="alert alert-warning">
+    <%= error.msg %>
+    <i class="alert-close fas fa-times"></i>
+</div>
+<% }); %>
+<% } %>
+
+
+<% if (typeof success != 'undefined') { %>
+<% success.forEach(function(suc) { %>
+<div class="alert alert-warning">
+    <%= suc.msg %>
+    <i class="alert-close fas fa-times"></i>
+</div>
+<% }); %>
+<% } %>
+
+
+<% if (success_msg != '') { %>
+<div class="alert alert-success">
+    <%= success_msg %>
+    <i class="alert-close fas fa-times"></i>
+</div>
+<% } %>
+
+
+<% if (error_msg != '') { %>
+<div class="alert alert-warning">
+    <%= error_msg %>
+    <i class="alert-close fas fa-times"></i>
+</div>
+<% } %>
+
+
+<% if (error != '') { %>
+<div class="alert alert-warning">
+    <%= error %>
+    <i class="alert-close fas fa-times"></i>
+</div>
+<% } %>

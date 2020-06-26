@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="/public/styles/page_not_found.css" />
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+	<link rel="shortcut icon" type="image/svg" href="/public/images/Logo.png" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+		integrity="sha256-BtbhCIbtfeVWGsqxk1vOHEYXS6qcvQvLMZqjtpWUEx8=" crossorigin="anonymous" />
+	<script src="/public/scripts/page_not_found.js"></script>
+	<base href="#top" target="_parent">
+	<title>Plaguepedia</title>
+</head>
+
+<body id="top">
+	<header>
+		<nav id="navbar">
+			<div id="icon">
+				<img src="/public/images/search.svg" alt="Icon" width="75" height="75">
+			</div>
+			<div id="sitename">
+				<h1>Plaguepedia</h1>
+				<h4>The encyclopedia about world's epidemics and pandemics</h4>
+			</div>
+			<div id="toggle">
+				<i class="fas fa-bars menu"></i>
+			</div>
+			<ul>
+				<li class="menuOptions"><a href="/">Home</a></li>
+				<li class="menuOptions"><a href="/#news">News</a></li>
+				<li class="menuOptions"><a href="/covid.html">COVID-19</a></li>
+				<li class="menuOptions dropdown">
+					<a href="/#info" class="dropbtn">Information</a>
+					<div class="dropdown-content">
+						<a href="/#totalcases">Total cases</a>
+						<a href="/#previous">Other plagues</a>
+						<a href="/#learnmore">Learn more</a>
+					</div>
+				</li>
+				<li class="menuOptions"><a href="/contact">Contacts</a></li>
+				<li class="menuReturn"><button id="returnbut" type="button" class="button"><span>Return</span></button>
+				</li>
+			</ul>
+		</nav>
+	</header>
+	<aside class="menu-sidebar">
+		<div class="closeSide"><i class="fas fa-times"></i></div>
+		<ul>
+			<li class="asideOptions"><a href="/">Home</a></li>
+			<li class="asideOptions"><a href="/#news">News</a></li>
+			<li class="asideOptions"><a href="/covid.html">COVID-19</a></li>
+			<li class="asideOptions"><a href="/#info">Information</a></li>
+			<li class="asideOptions"><a href="/contact">Contacts</a></li>
+			<li class="asideReturn"><button id="returnbut2" type="button" class="button"><span>Return</span></button>
+			</li>
+		</ul>
+	</aside>
+	<section id="notfound">
+		<div id="notfounddiv1" class="notfounddiv">
+			<img id="notfoundimg" src="/public/images/404.svg" alt="404 image" width="600" height="400">
+		</div>
+		<div id="notfounddiv2" class="notfounddiv">
+			<h1>Page not found</h1>
+			<h2>The link you followed may be broken, or the page may have been removed.</h2>
+		</div>
+	</section>
+</body>
+
+</html>

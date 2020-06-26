@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/public/styles/loginpage.css" />
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/svg" href="/public/images/Logo.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+        integrity="sha256-BtbhCIbtfeVWGsqxk1vOHEYXS6qcvQvLMZqjtpWUEx8=" crossorigin="anonymous" />
+    <script src="/public/scripts/loginpage.js"></script>
+    <base href="#top" target="_parent">
+    <title>Plaguepedia</title>
+</head>
+
+<body id="top">
+    <header>
+        <nav id="navbar">
+            <div id="icon">
+                <img src="/public/images/search.svg" alt="Icon" width="75" height="75">
+            </div>
+            <div id="sitename">
+                <h1>Plaguepedia</h1>
+                <h4>The encyclopedia about world's epidemics and pandemics</h4>
+            </div>
+            <div id="toggle">
+                <i class="fas fa-bars menu"></i>
+            </div>
+            <ul>
+                <li class="menuOptions"><a href="/">Home</a></li>
+                <li class="menuOptions"><a href="/#news">News</a></li>
+                <li class="menuOptions"><a href="/covid.html">COVID-19</a></li>
+                <li class="menuOptions dropdown">
+                    <a href="/#info" class="dropbtn">Information</a>
+                    <div class="dropdown-content">
+                        <a href="/#totalcases">Total cases</a>
+                        <a href="/#previous">Other plagues</a>
+                        <a href="/#learnmore">Learn more</a>
+                    </div>
+                </li>
+                <li class="menuOptions"><a href="/contact">Contacts</a></li>
+                <li class="menuReturn"><button id="returnbut" type="button" class="button"><span>Return</span></button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <aside class="menu-sidebar">
+        <div class="closeSide"><i class="fas fa-times"></i></div>
+        <ul>
+            <li class="asideOptions"><a href="/">Home</a></li>
+            <li class="asideOptions"><a href="/#news">News</a></li>
+            <li class="asideOptions"><a href="/covid.html">COVID-19</a></li>
+            <li class="asideOptions"><a href="/#info">Information</a></li>
+            <li class="asideOptions"><a href="/contact">Contacts</a></li>
+            <li class="asideReturn"><button id="returnbut2" type="button" class="button"><span>Return</span></button>
+            </li>
+        </ul>
+    </aside>
+    <section id="login">
+        <div id="logindiv1" class="logindiv">
+            <img id="loginimg" src="/public/images/profile_screen.svg" alt="login image" width="600" height="400">
+        </div>
+        <div id="logindiv2" class="logindiv">
+            <form action="/users/login" method="POST">
+                <img id="profpic" src="/public/images/profile_pic.svg" alt="Profile Pic">
+                <h2>Sign in</h2>
+                <h4>By logging in, you can access other cool features</h4>
+                <%- include("./partials/messages.ejs") %>
+                <div class="loginInput">
+                    <div class="icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div>
+                        <h5>Username</h5>
+                        <input class="input" name="username" type="text" />
+                    </div>
+                </div>
+                <div class="loginInput">
+                    <div class="icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div>
+                        <h5>Password</h5>
+                        <input class="input" name="password" type="password" />
+                    </div>
+                </div>
+                <input id="ip-keeper" name="ipAddress" type="hidden" />
+                <label><input type="checkbox" value="Remember">Remember password<span class="checkmark"></span></label>
+                <input type="submit" class="submitButton buttons" value="Login">
+                <input type="button" id="signup" class="regButton buttons" value="Sing up">
+            </form>
+        </div>
+    </section>
+</body>
+
+</html>

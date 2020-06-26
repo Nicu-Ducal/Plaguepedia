@@ -1,0 +1,551 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+html{
+	scroll-behavior: smooth;
+}
+
+body{
+	overflow-x: hidden;
+}
+
+@keyframes color{
+	0%{
+		background: #6c63ff;
+	}
+	25%{
+		background: #4b45b2;
+	}
+	50%{
+		background: #6c63ff;
+	}
+	75%{
+		background: #4b45b2;	
+	}
+	100%{
+		background: #6c63ff;
+	}
+}
+/* The Header and Nav bar */
+header{
+	background: #6c63ff;
+	background:-webkit-linear-gradient(left, #6c63ff, #4b45b2);
+	background: -moz-linear-gradient(left, #6c63ff, #4b45b2);
+	background: -ms-linear-gradient(left, #6c63ff, #4b45b2);
+	background: -o-linear-gradient(left, #6c63ff, #4b45b2);
+	background: linear-gradient(to right, #6c63ff, #4b45b2);
+}
+
+nav{
+	display: block;
+	border: 1px solid #6c63ff;
+	color: #ffffb3;
+	top: 0;
+}
+
+#icon{
+	float: left;
+	padding: 10px;
+	/*border: 1px solid black;*/
+}
+
+#sitename{
+	display: inline-block;
+	padding: 17px 0;
+	/*border: 1px solid blue;*/
+}
+
+#sitename > h1{
+	font-size: 3em;
+}
+
+nav ul{
+	display: block;
+	float: right;
+	margin: 0;
+	padding: 23px 20px;
+	/*border: 1px solid black;*/
+	list-style: none;
+}
+
+nav ul li{
+	display: inline-block;
+	/*float: left;*/
+	padding: 0 10px;
+	/*border: 1px solid black;*/
+}
+
+nav ul li a{
+	display: inline-block;
+	text-decoration: none;
+	color: #ffffb3;
+	font-size: 1.5em;
+	font-weight: 600;
+	position: relative;
+}
+
+ /* Login button */
+
+.button{
+	display: block;
+	text-decoration: none;
+	color: #ffffb3;
+	font-size: 1.5em;
+	font-weight: 600;
+	color: #6c63ff;
+	position: relative;	
+	border: 3px solid #ffffb3;
+	border-radius: 25px;
+	background-color: #ffffb3;   
+	cursor: pointer;
+	outline:none;
+	padding: 10px 23px;
+	transition: all 0.2s ease-in-out;
+}
+
+.button:hover{
+	border: 3px solid #ffffb3;
+	color: #ffffb3;
+	background-color: initial;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.4s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.4s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+#navbar ul li > a::after{
+	border-radius: 1em;
+	border-top: .1em solid #ffffb3;
+	content: "";
+	position: absolute;
+	right: 100%;
+	left: 0;
+	bottom: -0.1em;
+	transition: right .4s cubic-bezier(0, .5, 0, 1);
+}
+
+.dropdown-content > a::after{
+	border-radius: 1em;
+	content: "";
+	position: absolute;
+	right: 100%;
+	left: 0;
+	transition: right .4s cubic-bezier(0, .5, 0, 1);
+	border-top: .1em solid black;
+	bottom: 0em;
+}
+
+#navbar a:hover::after{
+	animation: anchor-underline 2s cubic-bezier(0,.5,0,1) infinite;
+}
+
+@keyframes anchor-underline{
+	0%, 10%{
+		left: 0;
+		right: 100%;
+	}
+	40%, 60%{
+		left: 0;
+		right: 0;
+	}
+	90%, 100%{
+		left: 100%;
+		right: 0;
+	}
+}
+
+.dropbtn{
+	display: inline-block;
+	color: #ffffb3;
+	text-align: center;
+}
+
+li.dropdown{
+	display: inline-block;
+}
+
+.dropdown-content{
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+}
+
+.dropdown-content a{
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	text-align: left;
+	position: relative;
+}
+
+.dropdown-content a:hover {
+	background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content{
+	display: block;
+}
+
+/* Toggle aside menu */
+
+#toggle{
+	padding: 10px 20px;
+	color: #fff;
+	text-align: right;
+	font-size: 2.5em;
+	display: none;
+	/*border: 1px solid black;*/
+	margin: 8px 0;
+}
+
+#toggle i{
+	opacity: 1;
+	transition: opacity 0.2s ease-in-out;
+}
+
+#toggle i:hover{
+	opacity: 0.5;
+	cursor:pointer;
+}
+
+.menu-sidebar{
+	position: fixed;
+	height: 100vh;
+	right: 0;
+	top: 0;
+	width: 0px; /*300*/
+	/*border: 1px solid black;*/
+	z-index: 10;
+	background-color: #f9f9f9;
+	transition: all 0.3s ease-in-out;
+	/*display: none;*/
+}
+
+.menu-sidebar ul{
+	visibility: hidden;
+	padding-top: 15px;
+	overflow: hidden;
+}
+
+.menu-sidebar ul li{
+	/*border: 1px solid black;*/
+	list-style: none;
+	line-height: 60px;
+	margin: 15px 30px;
+	opacity: 0;
+	transition: all 0.3s ease-in-out;
+}
+
+.menu-sidebar ul li a{
+	text-decoration: none;
+	color: #222;
+	display: block;
+	height: 60px;
+	text-align: center;
+	font-size: 1.5em;
+	font-weight: 600;
+	position: relative;
+}
+
+.closeSide{
+	/*border: 1px solid black;*/
+	display: block;
+	text-align: right;
+	margin: 25px 30px 5px 30px;
+	opacity: 0;
+	transition: all 0.3s ease-in-out;
+}
+
+.closeSide i{
+	font-size: 35px;
+	color: #222;
+	cursor: pointer;
+	opacity: 1;
+	transition: opacity 0.2s ease-in-out;
+}
+
+.closeSide i:hover{
+	opacity: 0.5;
+}
+
+aside ~ *, header{
+	filter: initial;
+	transition: all 0.3s ease-in-out;
+}
+
+/* Underline animations */
+.menu-sidebar ul li > a::after{
+	border-radius: 1em;
+	border-bottom: .1em solid #222;
+	content: "";
+	position: absolute;
+	right: 100%;
+	left: 0;
+	bottom: -0.1em;
+	transition: right .4s cubic-bezier(0, .5, 0, 1);
+}
+
+.menu-sidebar a:hover::after{
+	animation: anchor-underline 2s cubic-bezier(0,.5,0,1) infinite;
+}
+
+/* aside login button */
+.asideLogin{
+	padding-left: 60px;
+}
+
+.asideLogin button{
+	border: 3px solid #222;
+	background-color: #222;
+	color: #f1f1f1;
+}
+
+.asideLogin button:hover{
+	border: 3px solid #222;
+	color: #222;
+	background-color: initial;
+}
+
+.asideLogin button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.4s;
+}
+
+.asideLogin button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.4s;
+}
+
+.asideLogin button:hover span {
+  padding-right: 25px;
+}
+
+.asideLogin button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+section{
+	background: url('../images/gradientcream.svg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#title{
+	text-align: center;
+}
+
+#title h2{
+	text-align: center;
+	padding:70px 0;
+	font-size: 2.5em;
+}
+
+#covid {
+	min-height: 100vh;
+}
+
+#covid:after{
+	content: "";
+  	display: table;
+  	clear: both;
+}
+
+.coviddiv{
+	/*border: 1px solid black;*/
+	height: auto;
+	float: left;
+  	text-align: center;
+}
+
+#coviddiv1{
+	width: 25%;
+	padding-top: 100px;
+}
+
+#coviddiv2{
+	font-size: 1.2em;
+	padding: 20px 30px;
+	width: 75%;
+}
+
+#covid ul{
+	padding: 10px;
+	list-style: none;
+}
+
+#covid ul li{
+	padding: 15px;
+	cursor: pointer;
+	/*border: 1px solid black;*/
+}
+
+#covid ul li.active{
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+p, h3{
+	padding: 15px 0;
+}
+
+.covidtext{
+	margin: 0 auto;
+	width: 70%;
+	text-align: center;
+	margin-bottom: 40px;
+}
+*/
+figure{
+	border: 1px solid black;
+	text-align: center;
+	margin: 40px auto;
+}
+
+figure img{
+	max-width: 70%;
+	height: auto;
+}
+
+ /* For tasks */
+
+.off {
+	opacity: 0;
+}
+
+.on {
+	opacity: 1;
+	transition: all 0.1s ease-in-out;
+}
+
+.textoff {
+	opacity: 0;
+}
+
+.texton {
+	animation: textAppear 0.3s ease-in-out;
+}
+
+.wordsoff {
+	opacity: 0;
+}
+
+.wordson {
+	animation: textAppear 0.3s ease-in-out;
+}
+
+@keyframes textAppear {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+}
+
+
+/* Media */
+@media screen and (max-width: 1000px) {
+	#coviddiv1{
+		width: 100%;
+		padding-top: 0px;
+	}
+
+	#coviddiv1 ul li{
+		display: inline-block;
+	}
+
+	#coviddiv2{
+		font-size: 1.2em;
+		width: 100%;
+		padding-top: 40px;
+	}
+}
+
+@media screen and (max-width: 1310px){
+	#toggle{
+		display: inline-block;
+		/*border: 1px solid black;*/
+		float: right;
+		padding: 15px 20px;
+	}
+
+	.menuOptions, .menuOptions > *{
+		display: none;
+		visibility: hidden;
+	}
+
+	nav ul{
+		padding: 20px 10px;
+	}
+
+	nav ul li{
+		/*border: 1px solid black;*/
+		display: block;
+		text-align: center;
+		clear: both;
+		float: right;
+	}
+
+}
+
+@media screen and (max-width: 810px){
+	nav ul{
+		display: none;
+	}
+}
+
+@media screen and (max-width: 640px){
+	#icon, #icon img{
+		display: none;
+	}
+}
+
+@media screen and (max-width: 525px){
+	#sitename h4{
+		display: none;
+	}
+	#toggle{
+		padding: 14px 15px;
+		margin: 3px 0;
+	}
+}
+
+@media screen and (max-width: 380px){
+	nav{
+		font-size: 4vw;
+	}
+}

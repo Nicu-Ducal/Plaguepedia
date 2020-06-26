@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="styles/covid.css" />
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+	<link rel="shortcut icon" type="image/svg" href="images/Logo.png" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+		integrity="sha256-BtbhCIbtfeVWGsqxk1vOHEYXS6qcvQvLMZqjtpWUEx8=" crossorigin="anonymous" />
+	<script src="scripts/covid.js"></script>
+	<!--<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> TESTING-->
+	<base href="#top" target="_parent">
+	<title>Plaguepedia</title>
+</head>
+
+<body id="top">
+	<header>
+		<nav id="navbar">
+			<div id="icon">
+				<img src="images/search.svg" alt="Icon" width="75" height="75">
+			</div>
+			<div id="sitename">
+				<h1>Plaguepedia</h1>
+				<h4>The encyclopedia about world's epidemics and pandemics</h4>
+			</div>
+			<div id="toggle">
+				<i class="fas fa-bars menu"></i>
+			</div>
+			<ul>
+				<li class="menuOptions"><a href="/">Home</a></li>
+				<li class="menuOptions"><a href="/#news">News</a></li>
+				<li class="menuOptions"><a href="#top">COVID-19</a></li>
+				<li class="dropdown menuOptions">
+					<a href="/#info" class="dropbtn">Information</a>
+					<div class="dropdown-content">
+						<a href="/#totalcases">Total cases</a>
+						<a href="/#previous">Other plagues</a>
+						<a href="/#learnmore">Learn more</a>
+					</div>
+				</li>
+				<li class="menuOptions"><a href="/contact">Contacts</a></li>
+				<li class="menuLogin"><button id="logbutton" type="button" class="button"><span>Login</span></button>
+				</li>
+			</ul>
+		</nav>
+	</header>
+	<aside class="menu-sidebar">
+		<div class="closeSide"><i class="fas fa-times"></i></div>
+		<ul>
+			<li class="asideOptions"><a href="/">Home</a></li>
+			<li class="asideOptions"><a href="/#news">News</a></li>
+			<li class="asideOptions"><a href="#top">COVID-19</a></li>
+			<li class="asideOptions"><a href="/#info">Information</a></li>
+			<li class="asideOptions"><a href="/contact">Contacts</a></li>
+			<li class="asideLogin"><button id="logbutton2" type="button" class="button"><span>Login</span></button></li>
+		</ul>
+	</aside>
+
+	<section>
+		<div id="title">
+			<h2 id="titlu">The new Coronavirus outbreak</h2>
+		</div>
+		<div id="covid">
+			<div id="coviddiv1" class="coviddiv">
+				<h2>Content</h2>
+				<ul>
+					<li id="summary" class="active">Short summary</li>
+					<li id="symptoms">Signs and Symptoms</li>
+					<li id="cause">Cause</li>
+					<li id="history">History</li>
+					<li id="research">Research</li>
+				</ul>
+			</div>
+			<div id="coviddiv2" class="coviddiv">
+				<h3> What is the new COVID-19? </h3>
+				<hr>
+				<p><b>Coronavirus disease 2019 (COVID-19)</b><span id="text"> is an infectious disease caused by severe
+						acute
+						respiratory syndrome coronavirus 2 (SARS-CoV-2). The disease was first identified in 2019 in
+						Wuhan,
+						Central China, and has since spread globally, resulting in the 2019–20 coronavirus pandemic.
+						Most
+						people infected with the COVID-19 virus will experience mild to moderate respiratory illness and
+						recover without requiring special treatment. Older people, and those with underlying medical
+						problems like cardiovascular disease, diabetes, chronic respiratory disease, and cancer are more
+						likely to develop serious illness. <br><br> The virus is typically spread from one person to
+						another
+						via respiratory droplets produced during coughing. It may also be spread from touching
+						contaminated
+						surfaces and then touching one's face. Fecal–oral transmission is also being studied as the
+						virus
+						has been found in patients stool. Time from exposure to onset of symptoms is generally between
+						two
+						and 14 days, with an average of five days. The standard method of diagnosis is by reverse
+						transcription polymerase chain reaction (rRT-PCR) from a nasopharyngeal swab. The infection can
+						also
+						be diagnosed from a combination of symptoms, risk factors and a chest CT scan showing features
+						of
+						pneumonia.</span></p>
+				<figure>
+					<img src="https://beta.ctvnews.ca/content/dam/ctvnews/images/2020/3/3/1_4837302.jpg?cache_timestamp=1583273179500"
+						alt="Coronavirus Image">
+					<figcaption>An example of how coronaviruses lool like</figcaption>
+				</figure>
+			</div>
+		</div>
+	</section>
+</body>
+
+</html>

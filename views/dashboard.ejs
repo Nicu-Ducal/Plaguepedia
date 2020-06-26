@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../public/styles/dashboard.css" />
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/svg" href="/public/images/Logo.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+        integrity="sha256-BtbhCIbtfeVWGsqxk1vOHEYXS6qcvQvLMZqjtpWUEx8=" crossorigin="anonymous" />
+    <base href="#top" target="_parent">
+    <title>Plaguepedia</title>
+</head>
+
+<body id="top">
+    <header>
+        <nav id="navbar">
+            <div id="icon">
+                <img src="/public/images/search.svg" alt="Icon" width="75" height="75">
+            </div>
+            <div id="sitename">
+                <h1>Plaguepedia</h1>
+                <h4>The encyclopedia about world's epidemics and pandemics</h4>
+            </div>
+            <div id="toggle">
+                <i class="fas fa-bars menu"></i>
+            </div>
+            <ul>
+                <li class="menuOptions"><a href="/">Home</a></li>
+                <li class="menuOptions"><a href="/#news">News</a></li>
+                <li class="menuOptions"><a href="/public/covid.html">COVID-19</a></li>
+                <li class="menuOptions dropdown">
+                    <a href="/#info" class="dropbtn">Information</a>
+                    <div class="dropdown-content">
+                        <a href="/#totalcases">Total cases</a>
+                        <a href="/#previous">Other plagues</a>
+                        <a href="/#learnmore">Learn more</a>
+                    </div>
+                </li>
+                <li class="menuOptions"><a href="/public/contact.html">Contacts</a></li>
+                <li class="menuLogout"><button id="logoutbut" type="button" class="button"><span>Logout</span></button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <aside class="menu-sidebar">
+        <div class="closeSide"><i class="fas fa-times"></i></div>
+        <ul>
+            <li class="asideOptions"><a href="/">Home</a></li>
+            <li class="asideOptions"><a href="/#news">News</a></li>
+            <li class="asideOptions"><a href="/public/covid.html">COVID-19</a></li>
+            <li class="asideOptions"><a href="/#info">Information</a></li>
+            <li class="asideOptions"><a href="/public/contact.html">Contacts</a></li>
+            <li class="asideLogout"><button id="logoutbut2" type="button" class="button"><span>Logout</span></button>
+            </li>
+        </ul>
+    </aside>
+
+    <div id="dashoptions">
+        <ul>
+            <li><a href="">My profile</a></li>
+            <li><a href="/dashboard/friends">Friends</a></li>
+            <li><a href="/dashboard/online">Online now</a></li>
+            <li><a href="/dashboard/quiz">Quiz</a></li>
+            <li><a href="/dashboard/settings">Settings</a></li>
+        </ul>
+    </div>
+    <section>
+        <h1>My profile</h1>
+        <div id="dashboard">
+            <div id="dash1" class="dashdiv">
+                <img id="dashimg" src="/public/images/male_avatar.svg" alt="Profile image" width="600" height="400">
+            </div>
+            <div id="dash2" class="dashdiv">
+                <%- include("./partials/messages.ejs") %>
+                <h2>Welcome, <%= user.username %></h2>
+                <% if (user.lastIP == 'This is your first login') { %>
+                <h3><%= user.lastIP %></h3>
+                <% } else { %>
+                <h3 id="fill-info"></h3>
+                <h3>Your IP adress now: <%= user.nowIP %>. You have visited the website for <%= user.loginCount %> times
+                </h3>
+                <% } %>
+                <p> You can find your information here: </p>
+                <p>First Name: <%= user.firstname %>, Last Name: <%= user.lastname %></p>
+                <p>Email: <%= user.email %></p>
+                <p>Birthday:
+                    <%= new Date(user.birthday).getDate() + '.' + (new Date(user.birthday).getMonth() + 1) + '.' + new Date(user.birthday).getFullYear()%>
+                </p>
+                <p>According to your current birthday, you are: </p>
+                <div id="time"></div>
+            </div>
+    </section>
+    <script>
+        window.onload = function () {
+            /* Return button */
+            var logout = document.getElementsByClassName('button');
+            logout[0].onclick = function () {
+                window.location.href = '/users/logout';
+            }
+            logout[1].onclick = function () {
+                window.location.href = '/users/logout';
+            }
+
+            /* Side bar */
+            function toggleSideBar() {
+                let getSidebar = document.querySelector(".menu-sidebar");
+                let getSidebarUl = document.querySelector(".menu-sidebar ul");
+                let getSidebarLinks = document.querySelectorAll(".menu-sidebar ul li");
+                let getSidebarClose = document.querySelector(".closeSide");
+                let toBlurHeader = document.getElementsByTagName("header");
+                let toBlurSections = document.querySelectorAll("aside ~ *");
+
+                toBlurHeader[0].style.filter = "brightness(0.3)";
+                for (let i = 0; i < toBlurSections.length; i++) {
+                    toBlurSections[i].style.filter = "brightness(0.3)";
+                }
+
+                getSidebarUl.style.visibility = "visible";
+                getSidebar.style.width = "300px";
+                /*getSidebar.style.boxShadow = "5px 10px 8px 10px #888888";*/
+
+                getSidebarClose.style.opacity = "1";
+                for (let i = 0; i < getSidebarLinks.length; i++) {
+                    getSidebarLinks[i].style.opacity = "1";
+                }
+
+                toggleAsideStatus = true;
+            }
+
+            function closeSideBar() {
+                let getSidebar = document.querySelector(".menu-sidebar");
+                let getSidebarUl = document.querySelector(".menu-sidebar ul");
+                let getSidebarLinks = document.querySelectorAll(".menu-sidebar ul li");
+                let getSidebarClose = document.querySelector(".closeSide");
+                let toBlurHeader = document.getElementsByTagName("header");
+                let toBlurSections = document.querySelectorAll("aside ~ *");
+
+                getSidebarClose.style.opacity = "0";
+                for (let i = 0; i < getSidebarLinks.length; i++) {
+                    getSidebarLinks[i].style.opacity = "0";
+                }
+
+                /*getSidebar.style.boxShadow = "initial";*/
+                getSidebar.style.width = "0px";
+                getSidebarUl.style.visibility = "hidden";
+
+                toBlurHeader[0].style.filter = "initial";
+                for (let i = 0; i < toBlurSections.length; i++) {
+                    toBlurSections[i].style.filter = "initial";
+                }
+
+                toggleAsideStatus = false;
+            }
+
+            var toggleAsideStatus = false;
+            var toggleButton = document.querySelector("#toggle i");
+            var closeSideBarButton = document.querySelector(".closeSide i");
+            var closeSideBarLinks = document.querySelectorAll(".menu-sidebar ul li");
+            var closeByTouching = document.querySelectorAll("aside ~ *");
+
+
+            toggleButton.onclick = toggleSideBar;
+            closeSideBarButton.onclick = closeSideBar;
+            for (let i = 0; i < closeSideBarLinks.length; i++) {
+                closeSideBarLinks[i].addEventListener('click', closeSideBar);
+            }
+            for (let i = 0; i < closeByTouching.length; i++) {
+                closeByTouching[i].addEventListener('click', closeSideBar);
+            }
+
+
+            // Alerts closing
+            let alerts = document.querySelectorAll('.alert-close');
+
+            function closeAlert() {
+                let removeAlert = this.parentNode;
+                removeAlert.style.opacity = '0';
+                setTimeout(function () { removeAlert.parentNode.removeChild(removeAlert); }, 300);
+            }
+
+            for (let i = 0; i < alerts.length; i++) {
+                alerts[i].addEventListener('click', closeAlert);
+            }
+
+            var test = document.getElementById('test');
+
+            // Last visit
+            const lastLoginDate = new Date("<%= user.lastDate %>");
+            function GetLastInfo() {
+                let output = "";
+                if (lastLoginDate.getDate() < 10) {
+                    output += '0';
+                }
+                output += lastLoginDate.getDate() + '.';
+                if (lastLoginDate.getMonth() + 1 < 10) {
+                    output += '0';
+                }
+                output += (lastLoginDate.getMonth() + 1) + '.' + lastLoginDate.getFullYear() + ', ';
+                if (lastLoginDate.getHours() < 10) {
+                    output += '0';
+                }
+                output += lastLoginDate.getHours() + ':';
+                if (lastLoginDate.getMinutes() < 10) {
+                    output += '0';
+                }
+                output += lastLoginDate.getMinutes() + ':';
+                if (lastLoginDate.getSeconds() < 10) {
+                    output += '0';
+                }
+                output += lastLoginDate.getSeconds();
+                return output;
+            }
+            const output = "Your have entered the website last time at " + GetLastInfo() + " from the IP " + "<%= user.lastIP %>";
+            if ("<%= user.loginCount %>" != 1)
+                document.getElementById('fill-info').innerHTML = output;
+
+            // Calculator de varsta
+            const toYears = 1000 * 60 * 60 * 24 * 365;
+            const toMonths = 1000 * 60 * 60 * 24 * 30;
+            const toDays = 1000 * 60 * 60 * 24;
+            const toHours = 1000 * 60 * 60;
+            const toMinutes = 1000 * 60;
+            const toSeconds = 1000;
+
+            function checkBirthday() {
+                var now = new Date(), bday = new Date("<%= user.birthday %>");
+                var difference = now - bday;
+
+                let years = Math.floor(difference / toYears);
+                difference -= years * toYears;
+                let months = Math.floor(difference / toMonths);
+                difference -= months * toMonths;
+                let days = Math.floor(difference / toDays);
+                difference -= days * toDays;
+                let hours = Math.floor(difference / toHours);
+                difference -= hours * toHours;
+                let minutes = Math.floor(difference / toMinutes);
+                difference -= minutes * toMinutes;
+                let seconds = Math.floor(difference / toSeconds);
+                document.getElementById('time').innerHTML = years + " years, " + months + " months, " + days + " days, " + hours + " hours, " + minutes + " minutes, " + seconds + " seconds old";
+                setTimeout(checkBirthday, 1000);
+            }
+            checkBirthday();
+        }
+    </script>
+</body>
+
+</html>

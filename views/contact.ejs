@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/public/styles/contact.css" />
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/svg" href="/public/images/Logo.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+        integrity="sha256-BtbhCIbtfeVWGsqxk1vOHEYXS6qcvQvLMZqjtpWUEx8=" crossorigin="anonymous" />
+    <script src="/public/scripts/contact.js"></script>
+    <base href="#top" target="_parent">
+    <title>Plaguepedia</title>
+</head>
+
+<body id="top">
+    <header>
+        <nav id="navbar">
+            <div id="icon">
+                <img src="/public/images/search.svg" alt="Icon" width="75" height="75">
+            </div>
+            <div id="sitename">
+                <h1>Plaguepedia</h1>
+                <h4>The encyclopedia about world's epidemics and pandemics</h4>
+            </div>
+            <div id="toggle">
+                <i class="fas fa-bars menu"></i>
+            </div>
+            <ul>
+                <li class="menuOptions"><a href="/">Home</a></li>
+                <li class="menuOptions"><a href="/#news">News</a></li>
+                <li class="menuOptions"><a href="/covid.html">COVID-19</a></li>
+                <li class="dropdown menuOptions">
+                    <a href="/#info" class="dropbtn">Information</a>
+                    <div class="dropdown-content">
+                        <a href="/#totalcases">Total cases</a>
+                        <a href="/#previous">Other plagues</a>
+                        <a href="/#learnmore">Learn more</a>
+                    </div>
+                </li>
+                <li class="menuOptions"><a href="#top">Contacts</a></li>
+                <li class="menuLogin"><button id="logbutton" type="button" class="button"><span>Login</span></button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <aside class="menu-sidebar">
+        <div class="closeSide"><i class="fas fa-times"></i></div>
+        <ul>
+            <li class="asideOptions"><a href="/">Home</a></li>
+            <li class="asideOptions"><a href="/#news">News</a></li>
+            <li class="asideOptions"><a href="/covid.html">COVID-19</a></li>
+            <li class="asideOptions"><a href="/#info">Information</a></li>
+            <li class="asideOptions"><a href="#top">Contacts</a></li>
+            <li class="asideLogin"><button id="logbutton2" type="button" class="button"><span>Login</span></button></li>
+        </ul>
+    </aside>
+    <section id="about">
+        <div id="aboutdiv1" class="aboutdiv">
+            <img id="aboutimg" src="/public/images/my_photo.jpg" alt="About image">
+        </div>
+        <div id="aboutdiv2" class="aboutdiv">
+            <h1>About me</h1>
+            <br><br>
+            <p>Welcome, I'm Nicu.<br>I am a Computer Science student at
+                University of Bucharest (freshman, at the moment of creation of this website). I live currently in
+                Bucharest, Romania, but I'm originally from Chisinau, Republic of Moldova.<br>From being a two times 1st
+                place and two times 2nd place winner at the National Chemistry Olympiad, I switched my path and chose to
+                get myself a career in programming, because of my love for maths and algo thinking.<br>Time for a normal
+                about me. So, some things that I like:<br><br></p>
+            <ul class="hobbies">
+                <li>sleeping (love it) and being lazy at the right moments</li>
+                <li>spending time with friends</li>
+                <li>programming</li>
+                <li>solving math, chemistry and algo problems</li>
+                <li>having interesting conversations with interesting people</li>
+            </ul>
+            <p><br>Plaguepedia is an university project, but has a lot of hard work put in. It's meant to be a platform
+                for helping people find useful information about epidemiology and it's subdomains. Feel free to use it
+                and share it to other people.<br><br>Find me on social media or contact me down bellow:<br><br></p>
+            <div class="social">
+                <button class="button-soc fb" id="fb"><i class="fab fa-facebook-square"></i> Facebook</button>
+                <button class="button-soc ig" id="ig"><i class="fab fa-instagram"></i> Instagram</button>
+                <button class="button-soc lki" id="lki"><i class="fab fa-linkedin"></i> Linked In</button>
+                <button class="button-soc git" id="git"><i class="fab fa-github"></i> Github</button>
+                <button class="button-soc cf" id="cf"><i class="fas fa-stream"></i> Codeforces</button>
+            </div>
+        </div>
+    </section>
+    <section id="contact-me">
+        <h2>Contact Me</h2>
+        <div class="contact-div">
+            <div class="contact-left">
+                <img src="/public/images/opinion.svg" alt="contact pic" id="contact-pic">
+            </div>
+            <div class="contact-right">
+                <form id="email-form" method="POST">
+                    <input id="name" type="text" class="field" placeholder="Your name" required>
+                    <input id="email" type="email" class="field" placeholder="Your Email address" required>
+                    <input id="subject" type="text" class="field" placeholder="Subject" required>
+                    <textarea id="text" name="text" class="field" placeholder="Your message" required></textarea>
+                    <input type="submit" value="Send">
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

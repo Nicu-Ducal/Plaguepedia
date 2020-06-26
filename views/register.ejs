@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../public/styles/signuppage.css" />
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/svg" href="/public/images/Logo.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+        integrity="sha256-BtbhCIbtfeVWGsqxk1vOHEYXS6qcvQvLMZqjtpWUEx8=" crossorigin="anonymous" />
+    <script src="../public/scripts/signuppage.js"></script>
+    <!--<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> TESTING-->
+    <base href="#top" target="_parent">
+    <title>Plaguepedia</title>
+</head>
+
+<body id="top">
+    <header>
+        <nav id="navbar">
+            <div id="icon">
+                <img src="/public/images/search.svg" alt="Icon" width="75" height="75">
+            </div>
+            <div id="sitename">
+                <h1>Plaguepedia</h1>
+                <h4>The encyclopedia about world's epidemics and pandemics</h4>
+            </div>
+            <div id="toggle">
+                <i class="fas fa-bars menu"></i>
+            </div>
+            <ul>
+                <li class="menuOptions"><a href="/">Home</a></li>
+                <li class="menuOptions"><a href="/#news">News</a></li>
+                <li class="menuOptions"><a href="/covid.html">COVID-19</a></li>
+                <li class="menuOptions dropdown">
+                    <a href="/#info" class="dropbtn">Information</a>
+                    <div class="dropdown-content">
+                        <a href="/#totalcases">Total cases</a>
+                        <a href="/#previous">Other plagues</a>
+                        <a href="/#learnmore">Learn more</a>
+                    </div>
+                </li>
+                <li class="menuOptions"><a href="/contact">Contacts</a></li>
+                <li class="menuReturn"><button id="returnbut" type="button" class="button"><span>Return</span></button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <aside class="menu-sidebar">
+        <div class="closeSide"><i class="fas fa-times"></i></div>
+        <ul>
+            <li class="asideOptions"><a href="/">Home</a></li>
+            <li class="asideOptions"><a href="/#news">News</a></li>
+            <li class="asideOptions"><a href="/covid.html">COVID-19</a></li>
+            <li class="asideOptions"><a href="/#info">Information</a></li>
+            <li class="asideOptions"><a href="/contact">Contacts</a></li>
+            <li class="asideReturn"><button id="returnbut2" type="button" class="button"><span>Return</span></button>
+            </li>
+        </ul>
+    </aside>
+    <section id="signup">
+        <div id="signupdiv1" class="signupdiv">
+            <img id="signupimg" src="/public/images/account.svg" alt="sign up image" width="600" height="400">
+        </div>
+        <div id="signupdiv2" class="signupdiv">
+            <form id="form" action="/users/register" method="POST">
+                <h1>Sign up</h1>
+                <h4>New to our website? Sign up here for free!</h4>
+                <%- include("./partials/messages.ejs") %>
+                <div class="signupInput">
+                    <div class="icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div>
+                        <h5>Enter your username</h5>
+                        <input class="input" name="username" type="text"
+                            value="<%= typeof username != 'undefined' ? username : '' %>">
+                    </div>
+                </div>
+                <div class="signupInput">
+                    <div class="icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div>
+                        <h5>Enter your password</h5>
+                        <input id="password1" class="input" name="password" type="password"
+                            value="<%= typeof password != 'undefined' ? password : '' %>">
+                    </div>
+                </div>
+                <div class="signupInput">
+                    <div class="icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div>
+                        <h5>Confirm your password</h5>
+                        <input id="password2" class="input" name="password2" type="password"
+                            value="<%= typeof password != 'undefined' ? password2 : '' %>">
+                    </div>
+                </div>
+                <div class="signupInput">
+                    <div class="icon">
+                        <i class="fas fa-at"></i>
+                    </div>
+                    <div>
+                        <h5>Email address</h5>
+                        <input class="input" name="email" type="email"
+                            value="<%= typeof email != 'undefined' ? email : '' %>">
+                    </div>
+                </div>
+                <div class="signupInput">
+                    <div class="icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <div>
+                        <h5>Enter your birthday (6+)</h5>
+                        <input class="input" name='birthday' onfocus="(this.type='date')"
+                            onblur="if(!this.value)this.type='text'" min='1800-01-01' max='2013-12-31'
+                            value="<%= typeof birthday != 'undefined' ? birthday : '' %>">
+                    </div>
+                </div>
+                <input type="submit" class="regButton buttons" value="Sing up">
+            </form>
+        </div>
+    </section>
+</body>
+
+</html>
